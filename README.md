@@ -1,11 +1,21 @@
 # Zero-G Surfer 🚀🌌
+### 3D Cyberpunk Endless Runner Web Game
 
-A complete, high-octane 3D endless runner web game built with **React**, **React Three Fiber (@react-three/drei)**, **Three.js**, **Zustand**, and **Vanilla JavaScript / CSS3**.
+[![Live Demo](https://img.shields.io/badge/PLAY%20LIVE-ONLINE-00f0ff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://sathvik-ram-yerroju-ai-creator.github.io/subway/)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsathvik-ram-yerroju-ai-creator%2Fsubway)
+
+---
+
+## 🌐 Instant Public Web Links
+
+- **Live Playable Link:** [https://sathvik-ram-yerroju-ai-creator.github.io/subway/](https://sathvik-ram-yerroju-ai-creator.github.io/subway/)
+- **Vercel Instant Deployment:** [https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsathvik-ram-yerroju-ai-creator%2Fsubway](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsathvik-ram-yerroju-ai-creator%2Fsubway)
+- **GitHub Repository:** [https://github.com/sathvik-ram-yerroju-ai-creator/subway](https://github.com/sathvik-ram-yerroju-ai-creator/subway)
 
 ---
 
 ## 🎮 Game Overview
-You pilot an agile futuristic hover-surfer through the zero-gravity conduits of an orbital space station. Dodge red hazard barriers and space debris across a full **3x3 spatial grid** (3 horizontal lanes × 3 vertical heights), gather glowing **Energy Crystals** for score multiplier streaks, acquire temporary **Shield Power-Ups** for obstacle invulnerability, and push your velocity to the limit!
+Pilot an agile futuristic hover-surfer craft through the zero-gravity conduits of an orbital space station. Dodge red spiked hazard mines and laser barriers across a full **3x3 spatial grid** (3 horizontal lanes $\times$ 3 vertical heights), collect glowing **Energy Crystals** for score multiplier streaks, acquire temporary **Shield Power-Ups** for obstacle invulnerability, and push your velocity to the limit!
 
 ---
 
@@ -36,7 +46,7 @@ You pilot an agile futuristic hover-surfer through the zero-gravity conduits of 
 - **Combo & Multiplier:** Crystal streaks trigger up to **5x multipliers**.
 
 ### 2. React Three Fiber 3D Scene (`src/components/`)
-- **`SurferShip.jsx`**: Aerodynamic cyber craft with cockpit canopy, swept wings with neon cyan blade accents, anti-gravity hoverboard emitter, twin thrusters with dynamic plasma exhaust flames, and active spherical energy shield. Implements smooth `THREE.MathUtils.lerp` interpolation with dynamic banking roll (`rotation.z`), pitch (`rotation.x`), and yaw.
+- **`SurferShip.jsx`**: Aerodynamic cyber craft with cockpit canopy, swept wings with neon cyan blade accents, anti-gravity hoverboard emitter, twin thrusters with dynamic plasma exhaust flames, and active spherical energy shield. Implements smooth `THREE.MathUtils.damp` interpolation with dynamic banking roll (`rotation.z`), pitch (`rotation.x`), and yaw.
 - **`TunnelTrack.jsx`**: Modular infinite cyberpunk corridor with repeating octagonal rib arches, dual scrolling cyber grid floors/ceilings, and neon power conduits.
 - **`Obstacles.jsx`**: Red hazard cubes, glowing wireframe cages, and rotating debris clusters that spawn in safe, solvable 3x3 configurations ahead of the player. Features real-time 3D bounding-box collision detection with shield deflection.
 - **`Collectibles.jsx`**: Rotating glowing octahedron crystals and spherical shield power-ups with orbital rings.
@@ -48,11 +58,12 @@ You pilot an agile futuristic hover-surfer through the zero-gravity conduits of 
 
 ### 3. Procedural Web Audio Engine (`src/utils/audio.js`)
 - Synthesized in real-time using the native HTML5 **Web Audio API** — zero external asset downloads or CDN dependencies:
-  - **Thrusters**: Frequency-modulated pitch sweeps when switching lanes.
-  - **Crystals**: Shimmering bell harmonic arpeggios that scale with your combo level.
+  - **Thrusters / Lane Switch**: Frequency-modulated pitch sweeps when switching lanes (280Hz $\to$ 740Hz).
+  - **Crystals / Coins**: Shimmering bell harmonic arpeggios that scale with your combo level.
   - **Shield Up**: Resonant rising chord when collecting the shield power-up.
   - **Shield Deflect**: Heavy energy barrier deflection shockwave upon absorbing an obstacle.
-  - **Explosion**: Sub-bass rumble and bandpassed noise shockwave on crash.
+  - **Explosion**: Sub-bass rumble and bandpassed noise shockwave on crash (180Hz $\to$ 24Hz).
+  - **Start / Click**: Futuristic sci-fi button beep.
   - **Engine**: Continuous low-frequency drone that pitches up as velocity increases.
   - **Synthwave Music**: Cyberpunk arpeggiated bassline and lead melody.
 
@@ -64,7 +75,7 @@ You pilot an agile futuristic hover-surfer through the zero-gravity conduits of 
 
 ---
 
-## 🚀 Running the Project
+## 🚀 Running Locally
 
 ```bash
 # Install dependencies
